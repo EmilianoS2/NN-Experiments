@@ -11,8 +11,8 @@ A neural network can only learn what is genuinely there. Each project tests that
 ### [Volatility Forecasting](volatility/) — *signal: yes*
 Forecasting S&P 500 realized volatility with **GARCH vs. an MLP vs. an LSTM**. Volatility clusters, so the signal exists — and all three models converge to nearly the same accuracy. The lesson: when the signal is shallow, a 3-parameter classical model ties a neural net, and complexity has to earn its place. → **[Read the write-up](volatility/README.md)**
 
-### Prime Gap Prediction — *signal: no (hypothesis)* · in progress
-The counter-example. Can a neural net predict the next prime from recent ones? Primes have no *local* structure — the next one depends on global divisibility, not the recent sequence — so a "universal function approximator" should hit a wall. Testing whether any model can beat a dumb baseline that just predicts the average gap.
+### [Prime Gap Prediction](primes/) — *signal: present but unusable*
+The counter-example. Six models predict the gap to the next prime, from a dumb constant up to a transformer. Linear regression wins — 6 parameters beating 8,801 — and every model explains under 3% of the variance. The next prime is *fully determined* by the current one, yet almost none of it is reachable from recent gaps. The lesson: the question isn't whether the information is in the input, it's whether it's there in a form the model's inductive bias can use. → **[Read the write-up](primes/README.md)**
 
 ---
 
